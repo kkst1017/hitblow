@@ -15,12 +15,12 @@ def play_eitanngo():
 
     while True:
         guess = input("予想 > ").strip().lower()
-
-        if len(guess) != 3 or not guess.isalpha():
-            print("3文字の英単語を入力してください")
-            continue
         if guess == "h":
             print(make_hint(secret))
+            continue
+        if len(guess) != 3 or not guess.isalpha():
+            print("3文字の英単語を入力してください")
+
             continue
         #if guess not in WORDS:
             #print("一覧にある単語を入力してください")
