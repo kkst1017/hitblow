@@ -3,6 +3,8 @@
 from .game import play
 from .game_eitanngo import play_eitanngo
 from .game_battle import play_battle
+from .game_eitanngobattle import play_eitanngo_battle
+
 
 def main():
     print("=== Hit & Blow ===")
@@ -15,7 +17,7 @@ def main():
             choose_solo_mode()
             break
         elif play_mode == "2":
-            play_battle()
+            choose_dual_mode()
             break
         else:
             print("1か2を入力してね")
@@ -32,6 +34,22 @@ def choose_solo_mode():
             break
         elif mode == "2":
             play_eitanngo()
+            break
+        else:
+            print("1か2を入力してね")
+
+
+def choose_dual_mode():
+    print("1: 数字当てモード")
+    print("2: 英単語当てモード")
+
+    while True:
+        mode = input("モードを選んでください（1 or 2） > ").strip()
+        if mode == "1":
+            play_battle()
+            break
+        elif mode == "2":
+            play_eitanngo_battle()
             break
         else:
             print("1か2を入力してね")
