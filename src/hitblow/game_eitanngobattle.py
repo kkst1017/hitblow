@@ -1,6 +1,6 @@
 """英単語版 Hit & Blow（対戦モード）"""
 
-from .core_eitanngo import judge_eitanngo, make_secret_eitanngo
+from .core_eitanngo import judge_eitanngo, make_secret_eitanngo , make_hint
 
 
 def play_eitanngo_battle():
@@ -8,6 +8,7 @@ def play_eitanngo_battle():
 
     print("=== 英単語 Hit & Blow 対戦モード ===")
     print("3文字の英単語を入力してください。")
+    print("hと入力したらヒントを出力します")
 
     players = ["ユーザー1", "ユーザー2"]
     tries = [0, 0]
@@ -17,11 +18,16 @@ def play_eitanngo_battle():
         player = players[turn]
 
         guess = input(f"{player} の予想 > ").strip().lower()
+        
+        if guess == "h":
+            print(make_hint(secret))
+            continue
 
         if len(guess) != 3 or not guess.isalpha():
             print("3文字の英単語を入力してください")
+            print("hと入力したらヒントを出力します")
             continue
-
+        
         tries[turn] += 1
 
         hit, blow = judge_eitanngo(secret, guess)

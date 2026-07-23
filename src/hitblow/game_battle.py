@@ -6,7 +6,6 @@ from .core import judge, make_secret
 def play_battle(digits=3):
     secret = make_secret(digits)
     print(f"Hit & Blow 対戦モード（{digits} 桁・重複なし）")
-    print("3文字の数字を入力してください。")
     # ===== ① 開始時に足す =====
 
     players = ["ユーザー1", "ユーザー2"]

@@ -1,12 +1,13 @@
 """英単語版 Hit & Blow"""
 
-from .core_eitanngo import judge_eitanngo, make_secret_eitanngo
+from .core_eitanngo import judge_eitanngo, make_secret_eitanngo , make_hint
 
 
 def play_eitanngo():
     secret = make_secret_eitanngo()
 
     print("Hit & Blow（英単語モード・3文字）")
+    print("hと入力したらヒントを出力します")
     #print("使れる単語一覧")
     #print(", ".join(WORDS))
 
@@ -18,7 +19,9 @@ def play_eitanngo():
         if len(guess) != 3 or not guess.isalpha():
             print("3文字の英単語を入力してください")
             continue
-
+        if guess == "h":
+            print(make_hint(secret))
+            continue
         #if guess not in WORDS:
             #print("一覧にある単語を入力してください")
             #continue
