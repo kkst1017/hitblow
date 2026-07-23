@@ -1,14 +1,13 @@
 """英単語版 Hit & Blow（対戦モード）"""
 
-from .core_eitanngo import judge, make_secret
+from .core_eitanngo import judge_eitanngo, make_secret_eitanngo
 
 
 def play_eitanngo_battle():
-    secret = make_secret()
+    secret = make_secret_eitanngo()
 
     print("=== 英単語 Hit & Blow 対戦モード ===")
     print("3文字の英単語を入力してください。")
-    
 
     players = ["ユーザー1", "ユーザー2"]
     tries = [0, 0]
@@ -25,7 +24,7 @@ def play_eitanngo_battle():
 
         tries[turn] += 1
 
-        hit, blow = judge(secret, guess)
+        hit, blow = judge_eitanngo(secret, guess)
 
         print(f"  Hit={hit}  Blow={blow}")
 
