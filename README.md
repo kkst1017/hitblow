@@ -13,8 +13,13 @@ uv run pytest                 # core のテスト（緑）
 ```
 src/hitblow/
 ├─ core.py   判定と出題（純粋関数・テスト対象）
+├─ core_eitanngo.py   英単語定義と判定及びヒント
+├─ game_battle.py   数字あての対戦システム
 ├─ game.py   進行ループ ★機能はここの「ここに足す」場所に書く
+├─ game_eitanngo.py　英単語あてのシステム
+├─ game_eitanngobattle.py   英単語あてのシステム
 ├─ cli.py    main()（第3回で hitblow コマンドが呼ぶ）
+├─ __init__.py
 └─ __main__.py
 tests/test_core.py
 ```
@@ -33,7 +38,10 @@ tests/test_core.py
 
 ## 追加した機能（各ペアが1行ずつ足す）
 
--
+- 英単語あて機能
+- 対戦機能
+- ヒント機能
+- モード選択機能
 
 ## 進め方
 - 仕様を書く → **AI に実装させる**（コースサイトの「AI の使い方」参照）→ 遊んで確認＋`uv run pytest`。
